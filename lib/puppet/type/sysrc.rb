@@ -7,11 +7,11 @@ Puppet::Type.newtype(:sysrc) do
     desc 'key'
   end
 
-  newproperty(:value) do
+  newparam(:value) do
     desc 'value'
   end
 
-  newproperty(:path) do
+  newparam(:path) do
     desc 'path'
     defaultto '/etc/rc.conf'
   end

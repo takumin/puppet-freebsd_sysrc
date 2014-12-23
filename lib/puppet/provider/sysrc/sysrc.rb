@@ -18,12 +18,8 @@ Puppet::Type.type(:sysrc).provide(:sysrc) do
   end
 
   def exists?
-    args = ['-e', '-i', '-f', @resource[:path], @resource[:name]]
+    args = ['-i', '-n', '-f', @resource[:path], @resource[:name]]
     out, err, stat = Open3.capture3(:sysrc.to_s, *args)
-    if stat == 0
-      out == @resource[:value] ? true : false
-    else
-      false
-    end
+    out.strip == @resource[:value] if stat == 0
   end
 end
