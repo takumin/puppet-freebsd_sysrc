@@ -19,7 +19,7 @@ Puppet::Type.type(:sysrc).provide(:sysrc) do
 
   def exists?
     args = ['-e', '-i', '-f', @resource[:path], @resource[:name]]
-    out, err, stat = Open3.caputure3(:sysrc.to_s, *args)
+    out, err, stat = Open3.capture3(:sysrc.to_s, *args)
     if stat == 0
       out == @resource[:value] ? true : false
     else
