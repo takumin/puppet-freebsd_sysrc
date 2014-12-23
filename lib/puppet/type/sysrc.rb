@@ -3,17 +3,16 @@ Puppet::Type.newtype(:sysrc) do
 
   ensurable
 
-  newproperty(:key) do
-    isnamevar
+  newproperty(:name) do
     desc 'key'
+  end
+
+  newproperty(:value) do
+    desc 'value'
   end
 
   newproperty(:path) do
     desc 'path'
     defaultto '/etc/rc.conf'
-  end
-
-  newproperty(:value) do
-    desc 'value'
   end
 end
