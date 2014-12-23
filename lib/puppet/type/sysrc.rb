@@ -1,18 +1,19 @@
 Puppet::Type.newtype(:sysrc) do
-  @doc = "FreeBSD sysrc(8) configuration"
+  @doc = 'FreeBSD sysrc(8) configuration'
 
   ensurable
 
-  newproperty(:path) do
+  newproperty(:key) do
     isnamevar
-    desc "file"
+    desc 'key'
   end
 
-  newproperty(:key) do
-    desc "key"
+  newproperty(:path) do
+    desc 'path'
+    defaultto '/etc/rc.conf'
   end
 
   newproperty(:value) do
-    desc "value"
+    desc 'value'
   end
 end

@@ -4,7 +4,7 @@
 #
 class freebsd_sysrc::install {
   if $::operatingsystemmajrelease < 9 {
-    package { $::freebsd_sysrc::package
+    package { $::freebsd_sysrc::package:
       ensure => present,
     }
   }

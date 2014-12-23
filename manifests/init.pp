@@ -8,7 +8,8 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class freebsd_sysrc (
-  $config = $::freebsd_sysrc::params::config,
+  $package = $::freebsd_sysrc::params::package,
+  $config  = $::freebsd_sysrc::params::config,
 ) inherits ::freebsd_sysrc::params {
 
   # validate parameters here
