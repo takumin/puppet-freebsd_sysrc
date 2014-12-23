@@ -3,7 +3,7 @@ Puppet::Type.newtype(:sysrc) do
 
   ensurable
 
-  newproperty(:name) do
+  newparam(:name) do
     desc 'key'
   end
 
